@@ -14,11 +14,10 @@ return new class extends Migration
         Schema::create('kantor', function (Blueprint $table) {
             $table->increments('id_kantor');
             $table->string('nama_kantor', 20);
-            $table->enum('tipe_kantor', ['Pusat', 'Cabang'])
-                    ->default('Aktif');
+            $table->enum('tipe_kantor', ['Pusat', 'Cabang']);
             $table->enum('status_aktif', ['Aktif', 'Tidak_Aktif'])
                     ->default('Aktif');
-            $table->integer('no_telp_kantor', 13);
+            $table->string('no_telp_kantor', 13);
             $table->string('zona_waktu', 4);
             $table->string('alamat_kantor', 255);
 
@@ -27,7 +26,7 @@ return new class extends Migration
                     ->references('id_perusahaan')
                     ->on('perusahaan')
                     ->onDelete('cascade');
-            $table->unsignedBigInteger('id_lokasi');
+            $table->unsignedInteger('id_lokasi');
             $table->foreign('id_lokasi')
                     ->references('id_lokasi')
                     ->on('lokasi')

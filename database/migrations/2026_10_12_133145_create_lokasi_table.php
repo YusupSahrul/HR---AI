@@ -15,7 +15,7 @@ return new class extends Migration
             $table->increments('id_lokasi');
             $table->decimal('longitude', 11, 8);
             $table->decimal('latitude', 11, 8);
-            $table->integer('radius', 5);
+            $table->integer('radius');
         });
     }
 

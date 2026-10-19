@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{HelloWorldController}; // Wajib ditambahkan agar tidak error
@@ -13,5 +13,11 @@ use App\Http\Controllers\{HelloWorldController}; // Wajib ditambahkan agar tidak
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/landingpage', function () {
+    return view('landingpage');
+});
+Route::view('/login', 'auth.login')->name('login');
 Route::get('ambilfile', [HelloWorldController::class, 'ambilFile']);
 Route::post('kirim-pesan', [HelloWorldController::class, 'kirimPesan']);
+
+
