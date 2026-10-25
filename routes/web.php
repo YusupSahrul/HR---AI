@@ -13,7 +13,7 @@ use App\Http\Controllers\{HelloWorldController}; // Wajib ditambahkan agar tidak
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/landingpage', function () {
+Route::get('/', function () {
     return view('landingpage');
 });
 Route::view('/login', 'auth.login')->name('login');
