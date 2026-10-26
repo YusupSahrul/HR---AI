@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         };
 
+        // Fungsi untuk menambahkan pesan ke UI chat (Sudah dikembalikan)
         const addMessage = (message, type, isError = false) => {
             const item = document.createElement("div");
             item.className = `ai-chat-message ai-chat-message--${type}`;
@@ -71,8 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const bubble = document.createElement("div");
-            bubble.className = `ai-chat-bubble${isError ? " ai-chat-bubble--error" : ""
-                }`;
+            bubble.className = `ai-chat-bubble${isError ? " ai-chat-bubble--error" : ""}`;
             bubble.textContent = message;
             item.appendChild(bubble);
             messages.appendChild(item);
@@ -84,6 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
             setOpen(!widget.classList.contains("is-open")),
         );
         closeButton.addEventListener("click", () => setOpen(false));
+
+        // Hanya ada SATU event listener submit yang menggunakan dataset form
         form.addEventListener("submit", async (event) => {
             event.preventDefault();
             const message = input.value.trim();
@@ -91,22 +93,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
+            const csrfToken = form.dataset.csrf;
+            const endpoint = form.dataset.endpoint;
+
             addMessage(message, "user");
             input.value = "";
             input.disabled = true;
             sendButton.disabled = true;
             addMessage("Sedang mengetik...", "bot");
             const loading = messages.lastElementChild;
+
             try {
-                const response = await fetch(form.dataset.endpoint, {
+                const response = await fetch(endpoint, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        "X-CSRF-TOKEN": document.querySelector(
-                            'meta[name="csrf-token"]',
-                        )?.content || "",
+                        "X-CSRF-TOKEN": csrfToken,
                     },
-                    body: JSON.stringify({ message }),
+                    body: JSON.stringify({
+                        message: message
+                    }),
                 });
 
                 const data = await response.json();
