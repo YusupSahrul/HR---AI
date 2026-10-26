@@ -43,7 +43,8 @@
         <form
             class="ai-chat-form"
             data-ai-chat-form
-            data-endpoint="{{ url('kirim-pesan') }}">
+            data-endpoint="{{ url('kirim-pesan') }}"
+            data-csrf="{{ csrf_token() }}">
             <input
                 data-ai-chat-input
                 type="text"

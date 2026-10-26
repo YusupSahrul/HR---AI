@@ -9,7 +9,7 @@ class HelloWorldController extends Controller
 {
     public function ambilFile()
     {
-        return view('ambilfile');
+        return view('components.ai-chat-widget');
     }
 
     public function kirimPesan(Request $request)

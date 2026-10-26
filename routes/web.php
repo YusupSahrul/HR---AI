@@ -19,7 +19,28 @@ Route::get('/', function () {
     return view('landingpage');
 });
 Route::get('/admin_pusat', function () {
-    return view('admin_pusat.layouts.app');
+    return view('admin_pusat.pages.dashboard');
+});
+Route::get('/karyawan_pusat', function () {
+    return view('admin_pusat.pages.karyawan');
+});
+Route::get('/gaji_pusat', function () {
+    return view('admin_pusat.pages.gaji');
+});
+Route::get('/cabang_pusat', function () {
+    return view('admin_pusat.pages.cabang');
+});
+Route::get('/absensi_pusat', function () {
+    return view('admin_pusat.pages.absensi');
+});
+Route::get('/penjualan_pusat', function () {
+    return view('admin_pusat.pages.penjualan');
+});
+Route::get('/penilaian_pusat', function () {
+    return view('admin_pusat.pages.penilaian');
+});
+Route::get('/masukan_pusat', function () {
+    return view('admin_pusat.pages.masukan');
 });
 Route::post('/logout', function (Request $request) {
     Auth::logout();
@@ -31,7 +52,29 @@ Route::post('/logout', function (Request $request) {
     // Arahkan kembali ke halaman login
     return redirect('/login');
 })->name('logout');
-Route::view('/login', 'auth.login')->name('login');
+// 1. Untuk menampilkan halaman/form login (menggunakan GET)
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
+
+// 2. Untuk memproses data ketika form login disubmit (menggunakan POST)
+Route::post('/login', function (\Illuminate\Http\Request $request) {
+    // Tulis logika autentikasi / login di sini
+    // Contoh sementara (bisa disesuaikan dengan controller Anda nanti):
+    $credentials = $request->validate([
+        'email' => ['required', 'email'],
+        'password' => ['required'],
+    ]);
+
+    if (\Illuminate\Support\Facades\Auth::attempt($credentials)) {
+        $request->session()->regenerate();
+        return redirect()->intended('/admin_pusat');
+    }
+
+    return back()->withErrors([
+        'email' => 'Email atau password salah.',
+    ]);
+});
 Route::get('ambilfile', [HelloWorldController::class, 'ambilFile']);
 Route::post('kirim-pesan', [HelloWorldController::class, 'kirimPesan']);
 
