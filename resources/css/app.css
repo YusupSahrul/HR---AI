@@ -1,7 +1,7 @@
 ﻿@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
-    --primary: #1f5b3a;
+    --primary: #1E4D2B;
     --primary-dark: #16452b;
     --primary-soft: #e8f1eb;
     --background: #f8faf8;
@@ -10,6 +10,18 @@
     --text-secondary: #6d7d72;
     --border: #d8e3da;
     --placeholder: #dce9df;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.text1 {
+    color: var(--surface) !important;
+}
+
+.navbar-nav .dropdown-toggle::after {
+    border-top-color: #ffffff !important;
 }
 
 * {
@@ -890,4 +902,41 @@ textarea {
 
 .ai-chat-widget.is-open .ai-chat-popup {
     display: flex;
+}
+
+/* Styling Sidebar Kustom */
+.sidebar-custom {
+    width: 250px;
+    min-height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+}
+
+/* Link Menu Normal */
+.nav-link-custom {
+    color: #333333;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-link-custom i {
+    color: #6c757d;
+}
+
+.nav-link-custom:hover {
+    color: #1b4332;
+    background-color: #f8f9fa;
+}
+
+.nav-link-custom:hover i {
+    color: #1b4332;
+}
+
+/* Menu Aktif (Warna Hijau Tua sesuai tema dashboard) */
+.active-custom {
+    background-color: transparent !important;
+    color: #1b4332 !important;
+}
+
+.active-custom i {
+    color: #1b4332 !important;
 }
