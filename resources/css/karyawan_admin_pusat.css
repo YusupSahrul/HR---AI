@@ -1,0 +1,421 @@
+.karyawan-page {
+    width: 100%;
+    min-height: calc(100vh - 56px);
+    padding: 20px;
+    box-sizing: border-box;
+    background: #d9d9d9;
+    color: #1e1e1e;
+    font-family: "Poppins", sans-serif;
+}
+
+.karyawan-page .alert-success,
+.karyawan-page .alert-danger {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 18px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.karyawan-page .alert-success {
+    background: #dff3e7;
+    border: 1px solid #2e9560;
+    color: #1d5430;
+}
+
+.karyawan-page .alert-danger {
+    background: #fde1e1;
+    border: 1px solid #ff2b35;
+    color: #a51d25;
+}
+
+.karyawan-page .alert-danger ul {
+    margin: 6px 0 0 20px;
+    padding: 0;
+}
+
+.karyawan-page .karyawan-card {
+    width: 100%;
+    margin: 0 0 30px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.karyawan-page .green-header,
+.karyawan-page .form-header {
+    box-sizing: border-box;
+    width: 100%;
+    background: #1e4d2b;
+    color: #fff;
+}
+
+.karyawan-page .green-header {
+    min-height: 100px;
+    padding: 22px 50px 14px;
+}
+
+.karyawan-page .green-header h2,
+.karyawan-page .form-header h2 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.karyawan-page .filter-area {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 28px;
+    width: 100%;
+    margin: 8px 0 0;
+    padding: 0;
+}
+
+.karyawan-page .filter-area select {
+    min-width: 0;
+    padding: 2px 22px 2px 0;
+    border: 0;
+    appearance: none;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right center;
+    color: #fff;
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.karyawan-page .filter-area select:focus {
+    outline: 2px solid rgba(255, 255, 255, .75);
+    outline-offset: 3px;
+}
+
+.karyawan-page .filter-area option {
+    background: #fff;
+    color: #1e1e1e;
+}
+
+.karyawan-page .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #1e1e1e;
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+}
+
+.karyawan-page .employee-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: #fff;
+}
+
+.karyawan-page .employee-table th,
+.karyawan-page .employee-table td {
+    padding: 9px 10px;
+    border: 1px solid #1e1e1e;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.karyawan-page .employee-table th {
+    height: 50px;
+    background: #fff;
+    color: #1e4d2b;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.karyawan-page .employee-table td {
+    height: 50px;
+    color: #1e1e1e;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.karyawan-page .employee-table th:first-child,
+.karyawan-page .employee-table td:first-child {
+    width: 16%;
+    text-align: left;
+}
+
+.karyawan-page .employee-table th:nth-child(2),
+.karyawan-page .employee-table td:nth-child(2) {
+    width: 15%;
+}
+
+.karyawan-page .employee-table th:nth-child(3),
+.karyawan-page .employee-table td:nth-child(3),
+.karyawan-page .employee-table th:nth-child(4),
+.karyawan-page .employee-table td:nth-child(4) {
+    width: 13%;
+}
+
+.karyawan-page .employee-table th:nth-child(5),
+.karyawan-page .employee-table td:nth-child(5) {
+    width: 10%;
+}
+
+.karyawan-page .employee-table th:nth-child(6),
+.karyawan-page .employee-table td:nth-child(6),
+.karyawan-page .employee-table th:nth-child(7),
+.karyawan-page .employee-table td:nth-child(7) {
+    width: 11%;
+}
+
+.karyawan-page .employee-table th:last-child,
+.karyawan-page .employee-table td:last-child {
+    width: 11%;
+}
+
+.karyawan-page .employee-name {
+    display: block;
+    color: #1e4d2b;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.karyawan-page .employee-name:hover {
+    text-decoration: underline;
+}
+
+.karyawan-page .employee-id {
+    display: block;
+    margin-top: 2px;
+    color: #858585;
+    font-size: 10px;
+}
+
+.karyawan-page .action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.karyawan-page .action form {
+    margin: 0;
+}
+
+.karyawan-page .btn-edit,
+.karyawan-page .btn-delete {
+    display: inline-block;
+    padding: 5px 8px;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 11px;
+    line-height: 1.3;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.karyawan-page .btn-edit {
+    background: #2e8b57;
+}
+
+.karyawan-page .btn-delete {
+    background: #ff2629;
+}
+
+.karyawan-page .btn-edit:hover,
+.karyawan-page .btn-delete:hover,
+.karyawan-page .btn-save:hover,
+.karyawan-page .btn-cancel:hover {
+    filter: brightness(.92);
+}
+
+.karyawan-page .pagination-area {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 0;
+}
+
+.karyawan-page .pagination-area .pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+}
+
+.karyawan-page .pagination-area .page-link {
+    min-width: 34px;
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 5px;
+    background: #fff;
+    color: #1e4d2b;
+    font-size: 12px;
+    text-align: center;
+}
+
+.karyawan-page .pagination-area .page-item.active .page-link,
+.karyawan-page .pagination-area .page-item:first-child .page-link,
+.karyawan-page .pagination-area .page-item:last-child .page-link {
+    background: #1e4d2b;
+    color: #fff;
+}
+
+.karyawan-page .form-header {
+    min-height: 50px;
+    padding: 12px 50px;
+}
+
+.karyawan-page .form-body {
+    padding: 22px 50px 30px;
+}
+
+.karyawan-page .form-body form {
+    width: 100%;
+}
+
+.karyawan-page .form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px 30px;
+    width: min(100%, 816px);
+}
+
+.karyawan-page .form-group {
+    min-width: 0;
+    margin: 0;
+}
+
+.karyawan-page .form-group label {
+    display: block;
+    margin: 0 0 2px;
+    color: #1e4d2b;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.karyawan-page .form-control {
+    display: block;
+    width: 100%;
+    height: 27px;
+    min-height: 27px;
+    padding: 3px 8px;
+    border: 1px solid #4f4f4f;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #1e1e1e;
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 1.35;
+    box-shadow: none;
+}
+
+.karyawan-page .form-control:focus {
+    border-color: #2e8b57;
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba(46, 139, 87, .16);
+}
+
+.karyawan-page textarea.form-control {
+    height: 98px;
+    min-height: 98px;
+    resize: vertical;
+}
+
+.karyawan-page .button-area {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    width: min(100%, 816px);
+    margin-top: 24px;
+}
+
+.karyawan-page .btn-save,
+.karyawan-page .btn-cancel {
+    width: 120px;
+    min-height: 27px;
+    padding: 5px 12px;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.karyawan-page .btn-save {
+    background: #2e8b57;
+}
+
+.karyawan-page .btn-cancel {
+    background: #ff2629;
+}
+
+@media (max-width: 900px) {
+    .karyawan-page .green-header,
+    .karyawan-page .form-header {
+        padding-right: 28px;
+        padding-left: 28px;
+    }
+
+    .karyawan-page .form-body {
+        padding-right: 28px;
+        padding-left: 28px;
+    }
+}
+
+@media (max-width: 640px) {
+    .karyawan-page {
+        padding: 14px;
+    }
+
+    .karyawan-page .green-header {
+        padding: 18px 20px;
+    }
+
+    .karyawan-page .form-header {
+        padding: 12px 20px;
+    }
+
+    .karyawan-page .filter-area {
+        gap: 16px;
+    }
+
+    .karyawan-page .form-body {
+        padding: 20px;
+    }
+
+    .karyawan-page .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 16px;
+    }
+
+    .karyawan-page .button-area {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 420px) {
+    .karyawan-page .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .karyawan-page .button-area {
+        justify-content: stretch;
+    }
+
+    .karyawan-page .btn-save,
+    .karyawan-page .btn-cancel {
+        flex: 1;
+    }
+}

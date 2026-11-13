@@ -12,16 +12,24 @@
     --placeholder: #dce9df;
 }
 
-.bg-primary {
+.bg--primary {
     background-color: var(--primary) !important;
 }
 
-.text1 {
-    color: var(--surface) !important;
+.bg--white {
+    background-color: var(--surface) !important;
 }
 
-.navbar-nav .dropdown-toggle::after {
-    border-top-color: #ffffff !important;
+.color--primary {
+    color: var(--primary) !important;
+}
+
+.color--text {
+    color: var(--text) !important;
+}
+
+.color--black {
+    color: var(--text) !important;
 }
 
 * {
@@ -347,7 +355,8 @@ textarea {
     min-height: 110px;
 }
 
-.site-footer__logo {
+.site-footer__logo,
+.navbar-brand__logo {
     width: auto;
     max-width: 100px;
     height: auto;
@@ -904,39 +913,88 @@ textarea {
     display: flex;
 }
 
-/* Styling Sidebar Kustom */
-.sidebar-custom {
-    width: 250px;
-    min-height: 100vh;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-    background-color: #ffffff;
+#sidenavAccordion,
+#sidenavAccordion .nav-link,
+#sidenavAccordion .sb-sidenav-menu-heading {
+    color: #1E4D2B !important;
 }
 
-/* Link Menu Normal */
-.nav-link-custom {
-    color: #333333;
-    transition: all 0.2s ease-in-out;
+.sb-topnav {
+    height: 75px !important;
 }
 
-.nav-link-custom i {
-    color: #6c757d;
+.navbar-nav .nav-item .nav-link.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    /* Membuat ikon dan caret sejajar vertikal di tengah */
+    color: #FFF;
+    /* Warna teks */
 }
 
-.nav-link-custom:hover {
-    color: #1b4332;
-    background-color: #f8f9fa;
+/* Mengatur jarak antara ikon profil dan panah dropdown */
+.navbar-nav .nav-item .nav-link.dropdown-toggle::after {
+    margin-left: 8px;
+    /* Atur jarak sesuai keinginan */
 }
 
-.nav-link-custom:hover i {
-    color: #1b4332;
+.sb-sidenav .sb-sidenav-menu .nav .nav-link {
+    margin: 6px 12px !important;
+    /* Memberikan jarak (margin) di kiri dan kanan */
+    border-radius: 12px !important;
+    /* Membuat sudut kotak menjadi melengkung */
+    width: auto !important;
+    /* Mencegah lebar 100% */
+    transition: all 0.2s ease-in-out !important;
 }
 
-/* Menu Aktif (Warna Hijau Tua sesuai tema dashboard) */
-.active-custom {
-    background-color: transparent !important;
-    color: #1b4332 !important;
+.sb-nav-link-icon {
+    width: 30px;
+    /* Sesuaikan angka ini jika kurang besar */
+    text-align: center;
+    display: inline-block;
 }
 
-.active-custom i {
-    color: #1b4332 !important;
+.sb-sidenav .sb-sidenav-menu .nav .nav-link:hover {
+    color: #2E8B57 !important;
+    /* Warna teks saat hover */
+    background-color: #E8F1EB !important;
+    /* Warna latar belakang saat hover */
+    border-radius: 8px;
+    /* Membuat sudut border melengkung saat hover */
+    transform: translateX(3px);
+    /* Pergeseran kecil agar tetap dalam batas */
+}
+
+/* Pertahankan warna merah ikon Log Out saat hover maupun aktif */
+.sb-sidenav .sb-sidenav-menu .nav .nav-link.logout-link:hover .sb-nav-link-icon,
+.sb-sidenav .sb-sidenav-menu .nav .nav-link.logout-link.active .sb-nav-link-icon {
+    color: #dc3545 !important;
+}
+
+/* Warna menu aktif; selector ini mengalahkan aturan template SB Admin */
+.sb-sidenav .sb-sidenav-menu .nav>.nav-link.active:not(.logout-link) {
+    font-weight: 600 !important;
+    color: #2E8B57 !important;
+    border: 2px solid #1E4D2B !important;
+    background-color: #E8F1EB !important;
+    border-radius: 8px;
+}
+
+/* Ikon mengikuti warna teks menu aktif, termasuk saat memiliki color--primary */
+.sb-sidenav .sb-sidenav-menu .nav>.nav-link.active:not(.logout-link) .sb-nav-link-icon {
+    color: inherit !important;
+}
+
+.custom-toggle-btn {
+    transition: all 0.2s ease-in-out !important;
+}
+
+.custom-toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important; /* Efek transparan putih saat di-hover */
+    border-color: #ffffff !important;                          /* Mempertegas border jadi putih */
+    transform: translateY(-1px);                               /* Sedikit terangkat ke atas */
+}
+
+.custom-toggle-btn:active {
+    transform: scale(0.95);                                    /* Efek membal saat diklik */
 }

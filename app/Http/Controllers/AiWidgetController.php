@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class HelloWorldController extends Controller
+class AiWidgetController extends Controller
 {
     public function ambilFile()
     {
